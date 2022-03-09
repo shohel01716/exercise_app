@@ -18,7 +18,7 @@ class _WelcomePageState extends State<WelcomePage> {
   LoginController loginController = Get.put(LoginController());
 
   var scaffoldKey = GlobalKey<ScaffoldState>();
-  final RoundedLoadingButtonController _googleController = new RoundedLoadingButtonController();
+  final RoundedLoadingButtonController googleController = new RoundedLoadingButtonController();
 
   handleSkip (){
     /*final sb = context.read<SignInBloc>();
@@ -34,7 +34,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
   handleGoogleSignIn() async{
 
-    loginController.signInWithGoogle();
+    loginController.signInWithGoogle(googleController);
 
     /*final SignInBloc sb = Provider.of<SignInBloc>(context, listen: false);
     await AppService().checkInternet().then((hasInternet)async{
@@ -133,7 +133,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),)
                 ],
               ),
-              controller: _googleController,
+              controller: googleController,
               onPressed: ()=> handleGoogleSignIn(),
               width: MediaQuery.of(context).size.width * 0.80,
                     color: Config().appColor,
