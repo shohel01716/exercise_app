@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exercise_app/Screen/home_screen.dart';
+import 'package:exercise_app/Screen/upload_screen.dart';
 import 'package:exercise_app/app/config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,6 +19,13 @@ class LoginController extends GetxController{
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googlSignIn = new GoogleSignIn();
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  @override
+  void onInit() {
+    getUser();
+    getName();
+    super.onInit();
+  }
 
   Future signInWithGoogle(RoundedLoadingButtonController googleController) async {
     final GoogleSignInAccount? googleUser = await _googlSignIn.signIn();
@@ -44,9 +52,11 @@ class LoginController extends GetxController{
         debugPrint("login success:: "+userDetails.toString());
         googleController.success();
 
-        Timer(const Duration(seconds: 1),() {
-          Get.to(HomeScreen());
-        });
+        /*Timer(const Duration(seconds: 1),() {
+          Get.to(UploadScreen());
+        });*/
+
+        Get.to(() => UploadScreen());
 
       } catch (e) {
         debugPrint("_errorCode:: "+e.toString());

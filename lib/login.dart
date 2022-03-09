@@ -1,20 +1,21 @@
 import 'dart:io';
+import 'package:exercise_app/Screen/Widget/primary_button.dart';
 import 'package:exercise_app/app/config.dart';
 import 'package:exercise_app/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 
-class WelcomePage extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   final String? tag;
 
-  const WelcomePage({Key? key, this.tag}) : super(key: key);
+  const LoginScreen({Key? key, this.tag}) : super(key: key);
 
   @override
-  _WelcomePageState createState() => _WelcomePageState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _LoginScreenState extends State<LoginScreen> {
   LoginController loginController = Get.put(LoginController());
 
   var scaffoldKey = GlobalKey<ScaffoldState>();
@@ -56,6 +57,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
                     RoundedLoadingButton(
                       child: Wrap(
                         children: const [
@@ -77,6 +79,22 @@ class _WelcomePageState extends State<WelcomePage> {
                       color: Config().appColor,
                       elevation: 0,
                       //borderRadius: 3,
+                    ),
+
+                    const SizedBox(height: 20,),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                      child: PrimaryButton(
+                        windowWidth: Get.width,
+                        color: Colors.blue,
+                        buttonTitle: "Skip",
+                        onPressed: () {
+
+                          Get.back();
+
+                        },
+                      ),
                     ),
                   ],
                 ),
