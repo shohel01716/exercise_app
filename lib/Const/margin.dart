@@ -17,3 +17,13 @@ class SpaceW10 extends StatelessWidget {
     );
   }
 }
+
+
+class SpaceH100 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      height: 100.0,
+    );
+  }
+}

@@ -2,5 +2,6 @@
 
 class LocalImages {
 
-  static String demo = "assets/images/pic.jpg";
+  static String logo = "assets/images/logo.png";
+  static String upload = "assets/images/upload.png";
 }

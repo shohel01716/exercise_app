@@ -1,6 +1,7 @@
 
 import 'dart:async';
 
+import 'package:exercise_app/Const/local_image.dart';
 import 'package:exercise_app/Screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          "assets/images/icon.png",
+          LocalImages.logo,
           width: 160,
           height:160,
 
