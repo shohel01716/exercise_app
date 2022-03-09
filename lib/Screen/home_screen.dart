@@ -3,7 +3,9 @@ import 'package:exercise_app/Const/local_color.dart';
 import 'package:exercise_app/Const/local_image.dart';
 import 'package:exercise_app/Const/margin.dart';
 import 'package:exercise_app/Screen/Widget/text_widget.dart';
+import 'package:exercise_app/Screen/upload_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 
@@ -19,6 +21,13 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: appBG,
         centerTitle: true,
            title: boldtext("Photo Share"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+Get.to(UploadScreen());
+        },
+        tooltip: 'Upload',
+        child: Image.asset(LocalImages.upload, height: 30,),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -76,7 +85,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
          SpaceH10(),
-          Image.asset(LocalImages.demo),
+          Image.asset(LocalImages.logo),
           SpaceH10(),
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
