@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "526827281123",
+    "project_id": "photo-sharing-884c8",
+    "storage_bucket": "photo-sharing-884c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526827281123:android:82584b56e26611080903d6",
+        "android_client_info": {
+          "package_name": "com.shohel.exercise.exercise_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526827281123-7ol4v3ok5qqmq97rikuilr0qbfgjtv35.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shohel.exercise.exercise_app",
+            "certificate_hash": "72d42bc5715702cda3bc1edd12ce83ae375a03ae"
+          }
+        },
+        {
+          "client_id": "526827281123-dkib4fp0a5n036e8es6ghhf93u2fp7eo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shohel.exercise.exercise_app",
+            "certificate_hash": "d087f0616fb1139bc19edc18f549f3dd3a1c1eb1"
+          }
+        },
+        {
+          "client_id": "526827281123-v5pcehm2gmqmro42bk0gqms62lqd5fd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD76V5rNs3Rzej_EyZfgli3nS2yvzjto7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526827281123-v5pcehm2gmqmro42bk0gqms62lqd5fd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
