@@ -13,6 +13,7 @@ import 'package:rounded_loading_button/rounded_loading_button.dart';
 class LoginController extends GetxController{
 
   var userID = "".obs;
+  var userName = "".obs;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googlSignIn = new GoogleSignIn();
@@ -37,6 +38,9 @@ class LoginController extends GetxController{
         this._uid = userDetails.uid;
         this._signInProvider = 'google';*/
 
+        saveUser(userDetails.uid);
+        saveName(userDetails.displayName);
+
         debugPrint("login success:: "+userDetails.toString());
         googleController.success();
 
@@ -60,8 +64,18 @@ class LoginController extends GetxController{
     await localRef.write(Config().userID, id);
   }
 
-  getUser(id) async {
+  getUser() async {
     String userId = await localRef.read(Config().userID);
     userID.value = userId;
+  }
+
+  saveName(name) async {
+    userName.value = name;
+    await localRef.write(Config().userName, name);
+  }
+
+  getName() async {
+    String name = await localRef.read(Config().userName);
+    userName.value = name;
   }
 }
