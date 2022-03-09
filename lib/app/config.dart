@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Config{
 
+  final String userID = 'userID';
   final String appName = 'Just Sharing';
   final String logo = 'assets/images/logo.png';
 

@@ -2,13 +2,17 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exercise_app/Screen/home_screen.dart';
+import 'package:exercise_app/app/config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 
 class LoginController extends GetxController{
+
+  var userID = "".obs;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googlSignIn = new GoogleSignIn();
@@ -47,5 +51,17 @@ class LoginController extends GetxController{
     } else {
       debugPrint("googleUser:: null");
     }
+  }
+
+  var localRef = GetStorage();
+
+  saveUser(id) async {
+    userID.value = id;
+    await localRef.write(Config().userID, id);
+  }
+
+  getUser(id) async {
+    String userId = await localRef.read(Config().userID);
+    userID.value = userId;
   }
 }
